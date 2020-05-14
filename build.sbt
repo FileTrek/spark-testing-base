@@ -294,7 +294,7 @@ lazy val publishSettings = Seq(
   credentials ++= Seq(Credentials(Path.userHome / ".ivy2" / ".sbtcredentials"), Credentials(Path.userHome / ".ivy2" / ".sparkcredentials")),
   useGpg := true,
   artifactName := { (sv: ScalaVersion, module: ModuleID, artifact: Artifact) =>
-    artifact.name + "-" +  module.revision + "_" + "hadoop3.1.1" + "." + artifact.extension
+    artifact.name + "_" + sv.binary + "-" +  module.revision + "_" + "hadoop3.1.1" + "." + artifact.extension
   }
 )
 
